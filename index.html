@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Visa Rewards</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col bg-gray-50">
+    <header class="bg-[#1a1f71] text-white shadow-lg">
+      <div class="container mx-auto px-4 py-5 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <svg class="h-8 w-8 text-[#F7B600]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="5" rx="2"/>
+            <line x1="2" x2="22" y1="10" y2="10"/>
+          </svg>
+          <span class="text-2xl font-semibold tracking-tight">Visa Rewards</span>
+        </div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li class="hidden md:block"><a href="#" class="hover:text-[#F7B600] transition-colors">Home</a></li>
+            <li class="hidden md:block"><a href="#" class="hover:text-[#F7B600] transition-colors">Benefits</a></li>
+            <li class="hidden md:block"><a href="#" class="hover:text-[#F7B600] transition-colors">Help</a></li>
+            <li><button class="bg-[#F7B600] text-[#1a1f71] py-2 px-4 rounded-md font-medium hover:bg-[#e5a700] transition-colors">Sign In</button></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <div class="max-w-7xl mx-auto px-4 py-8">
+        <div id="welcomeSection" class="mb-8">
+          <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-[#1a1f71] mb-4">Welcome to Visa Rewards</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Enter your User ID to access exclusive rewards and benefits tailored just for you.
+            </p>
+          </div>
+          
+          <div class="bg-white rounded-lg shadow-md p-6 max-w-lg mx-auto mt-8">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Enter Your User ID</h2>
+            <p class="text-gray-600 mb-6">
+              Access your personalized rewards by entering your User ID below.
+              <br>
+              <span class="text-sm italic mt-1 block">
+                (For demo purposes, try: user1, user2, or user3)
+              </span>
+            </p>
+            
+            <form id="userForm" class="space-y-4">
+              <div class="relative">
+                <input
+                  type="text"
+                  id="userId"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1a1f71]"
+                  placeholder="Enter your User ID"
+                >
+                <svg class="absolute right-3 top-3 text-gray-400 h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.3-4.3"/>
+                </svg>
+              </div>
+              
+              <div id="errorMessage" class="hidden text-red-500 text-sm"></div>
+              
+              <button
+                type="submit"
+                class="w-full bg-[#1a1f71] text-white py-3 rounded-md font-medium hover:bg-[#151b5e] transition-colors flex justify-center items-center"
+                id="submitButton"
+              >
+                View My Rewards
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div id="rewardsSection" class="hidden animate-fadeIn">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div class="lg:col-span-2" id="rewardsList"></div>
+            <div id="userProfile"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-[#1a1f71] text-white pt-12 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <svg class="h-6 w-6 text-[#F7B600]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+                <line x1="2" x2="22" y1="10" y2="10"/>
+              </svg>
+              <span class="text-xl font-semibold">Visa Rewards</span>
+            </div>
+            <p class="text-gray-300 mb-4">
+              Unlock exceptional value with every transaction through our exclusive Visa rewards program.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white transition-colors">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Rewards Catalog</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">FAQs</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-white font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Terms & Conditions</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Cookie Policy</a></li>
+              <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Rewards Program Rules</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 class="text-white font-semibold mb-4">Contact</h3>
+            <ul class="space-y-2">
+              <li class="text-gray-300">1-800-VISA-REWARDS</li>
+              <li class="text-gray-300">support@visarewards.com</li>
+              <li class="text-gray-300">P.O. Box 12345, San Francisco, CA 94111</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+          <p class="text-gray-400 text-sm">
+            &copy; <span id="currentYear"></span> Visa Inc. All rights reserved. This is a demo website for illustrative purposes only.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="rewardModal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
