@@ -6,6 +6,8 @@ Our team developed a full-stack web application for the **Visa Data Analytics Ch
 
 Using a **FastAPI backend** with **Pandas** and **CSV-based data processing**, paired with a modern **React frontend**, our platform gives users a personalized dashboard that displays spending trends, top merchants, shopping behavior, and more—making reward suggestions based on real data.
 
+## Check it out here!: https://visarewardplus.netlify.app
+
 ---
 
 ## 🎯 Prompt
